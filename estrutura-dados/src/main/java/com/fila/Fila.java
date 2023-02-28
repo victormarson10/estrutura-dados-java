@@ -1,20 +1,20 @@
 package com.fila;
 
-public class Fila {
+public class Fila<T> {
 
-    private No refNoEntradaFila;
+    private No<T> refNoEntradaFila;
 
     public Fila() {
         this.refNoEntradaFila = null;
     }
 
-    public void enqueue(Object obj){
-        No novoNo = new No(obj);
+    public void enqueue(T object){
+        No novoNo = new No(object);
         novoNo.setRefNo(refNoEntradaFila);
         refNoEntradaFila = novoNo;
     }
 
-    public Object frist(){
+    public T frist(){
 
         if (!this.isEmpty()){
             No primeiroNo = refNoEntradaFila;
@@ -26,13 +26,13 @@ public class Fila {
                 }
 
             }
-            return primeiroNo.getObject();
+            return (T) primeiroNo.getObject();
 
         }
         return null;
     }
 
-    public Object dequeue(){
+    public T dequeue(){
         String msgFila = "A fila está vazia";
 
         if (!this.isEmpty()){
@@ -47,7 +47,7 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo.getObject();
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
