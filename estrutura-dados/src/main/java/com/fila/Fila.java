@@ -8,13 +8,13 @@ public class Fila {
         this.refNoEntradaFila = null;
     }
 
-    public void enqueue(No novoNo){
+    public void enqueue(Object obj){
+        No novoNo = new No(obj);
         novoNo.setRefNo(refNoEntradaFila);
         refNoEntradaFila = novoNo;
     }
 
-    public String frist(){
-        String msgFila = "A fila está vazia";
+    public Object frist(){
 
         if (!this.isEmpty()){
             No primeiroNo = refNoEntradaFila;
@@ -26,13 +26,13 @@ public class Fila {
                 }
 
             }
+            return primeiroNo.getObject();
 
         }
-        return msgFila;
-        /*return null*/
+        return null;
     }
 
-    public No dequeue(){
+    public Object dequeue(){
         String msgFila = "A fila está vazia";
 
         if (!this.isEmpty()){
@@ -47,7 +47,7 @@ public class Fila {
                     break;
                 }
             }
-            return primeiroNo;
+            return primeiroNo.getObject();
         }
         return null;
     }
