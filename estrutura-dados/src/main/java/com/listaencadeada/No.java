@@ -3,17 +3,22 @@ package com.listaencadeada;
 public class No<T> {
 
     private T conteudo;
-    private No proximoNo;
+    private No proximoNo = null;
+    //private No proximoNo;
 
 
     public No(T conteudo) {
-        this.proximoNo = null;
+        this.conteudo = conteudo;
+        //this.proximoNo = null;
 
     }
 
     public No(T conteudo, No proximoNo) {
-        this.proximoNo = null;
         this.conteudo = conteudo;
+        this.proximoNo = proximoNo;
+
+        //this.proximoNo = null;
+        //this.conteudo = conteudo;
     }
 
     public T getConteudo() {
