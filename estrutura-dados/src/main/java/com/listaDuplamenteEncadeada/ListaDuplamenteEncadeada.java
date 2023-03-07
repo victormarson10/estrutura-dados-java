@@ -65,7 +65,7 @@ public class ListaDuplamenteEncadeada<T> {
             NoDuplo<T> noAuxiliar = getNo(index);
             noAuxiliar.getNoPrevio().setNoProximo(noAuxiliar.getNoProximo());
             if (noAuxiliar != ultimoNo){
-                noAuxiliar.getNoProximo().setNoProximo(noAuxiliar.getNoPrevio());
+                noAuxiliar.getNoProximo().setNoPrevio(noAuxiliar.getNoPrevio());
             }else {
                 ultimoNo = noAuxiliar;
             }
